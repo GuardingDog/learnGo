@@ -14,3 +14,4 @@
 - [ ] 文本正常化中的NFC, NFD, NFKC, NFKD的概念[blog](https://go.dev/blog/normalization)
 - [ ] Go Test 的使用与实现原理[blog](https://go.dev/blog/cover)
 - [ ] Go PlayGround的实现架构原理[blog](https://go.dev/blog/playground)
+- [ ] Go Concurrency Pattern: [blog1](https://go.dev/blog/pipelines), [blog2](https://go.dev/blog/context)
