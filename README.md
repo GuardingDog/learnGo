@@ -15,3 +15,6 @@
 - [ ] Go Test 的使用与实现原理[blog](https://go.dev/blog/cover)
 - [ ] Go PlayGround的实现架构原理[blog](https://go.dev/blog/playground)
 - [ ] Go Concurrency Pattern: [blog1](https://go.dev/blog/pipelines), [blog2](https://go.dev/blog/context)
+- [ ] PGO Partice: [blog1](https://go.dev/blog/pgo), [doc](https://go.dev/doc/pgo)
+- [ ] Go Race Detect Commond Line: race [blog1](https://go.dev/blog/race-detector)
+- [ ] Go Generate 的使用场景: [blog1](https://go.dev/blog/generate)
