@@ -18,3 +18,5 @@
 - [ ] PGO Partice: [blog1](https://go.dev/blog/pgo), [doc](https://go.dev/doc/pgo)
 - [ ] Go Race Detect Commond Line: race [blog1](https://go.dev/blog/race-detector)
 - [ ] Go Generate 的使用场景: [blog1](https://go.dev/blog/generate)
+- [ ] HTTP Tracing 的了解: [blog1](https://go.dev/blog/http-tracing)
+- [ ] HTTP Server Push 的梳理: [blog1](https://go.dev/blog/h2push)
