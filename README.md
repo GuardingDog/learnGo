@@ -5,6 +5,7 @@
 - [ ] Go Doc 命令梳理
 - [ ] Go Fix 命令梳理
 - [ ] pprof 命令的使用
+- [ ] pprof 的源码解析
 - [ ] 何为FirstClass?
 - [ ] Simplify error handling: [blog](https://go.dev/blog/error-handling-and-go)
 - [ ] Reflect Three Point[blog](https://go.dev/blog/laws-of-reflection)

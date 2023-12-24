@@ -1,23 +1,27 @@
 package main
 
 import (
-	"fmt"
-
-	"golang.org/x/text/unicode/norm"
+	"log"
+	"net/http"
+	_ "net/http/pprof"
 )
 
 func main() {
-	str := "㎡"
-	nfc := norm.NFC.String(str)   // NFC 形式
-	nfkc := norm.NFKC.String(str) // NFKC 形式
+	go func() {
+		for {
+			log.Println(Add("https://github.com/EDDYCJY"))
+		}
+	}()
 
-	fmt.Printf("NFC String RESULT IS: % s\n", nfc)
-	fmt.Printf("NFKC String RESULT IS: % s\n", nfkc)
-	fmt.Printf("NFC Bytes RESULT IS: % x\n", nfc)
-	fmt.Printf("NFKC Bytes RESULT IS: % x\n", nfkc)
-	fmt.Printf("NFC Rune RESULT IS: % +q\n", nfc)
-	fmt.Printf("NFKC Rune RESULT IS: % +q\n", nfkc)
+	http.ListenAndServe("0.0.0.0:8000", nil)
+}
 
-	// 检查是否相等
-	fmt.Println(nfc == nfkc) // 输出：false
+var datas []string
+
+func Add(str string) string {
+	data := []byte(str)
+	sData := string(data)
+	datas = append(datas, sData)
+
+	return sData
 }

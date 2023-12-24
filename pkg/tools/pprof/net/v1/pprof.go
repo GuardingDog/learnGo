@@ -1,0 +1,28 @@
+// 本文件关于net/http/pprof 的使用, 仅用于备份
+package main
+
+import (
+	"log"
+	"net/http"
+	_ "net/http/pprof"
+)
+
+func main() {
+	go func() {
+		for {
+			log.Println(Add("https://github.com/EDDYCJY"))
+		}
+	}()
+
+	http.ListenAndServe("0.0.0.0:8000", nil)
+}
+
+var datas []string
+
+func Add(str string) string {
+	data := []byte(str)
+	sData := string(data)
+	datas = append(datas, sData)
+
+	return sData
+}
