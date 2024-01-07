@@ -21,3 +21,5 @@
 - [ ] Go Generate 的使用场景: [blog1](https://go.dev/blog/generate)
 - [ ] HTTP Tracing 的了解: [blog1](https://go.dev/blog/http-tracing)
 - [ ] HTTP Server Push 的梳理: [blog1](https://go.dev/blog/h2push)
+- [ ] Protocol Buffer 的梳理: [blog2](https://go.dev/blog/protobuf-apiv2)
+- [ ] Module compatible 的了解: [blog1](https://go.dev/blog/module-compatibility)
