@@ -2,13 +2,13 @@
 - 个人纪录GO语言学习过程
 ## 待梳理点:
 - [x] data format 相关梳理
-- [ ] Go Doc 命令梳理
-- [ ] Go Fix 命令梳理
-- [ ] pprof 命令的使用
-- [ ] pprof 的源码解析
-- [ ] 何为FirstClass?
-- [ ] Simplify error handling: [blog](https://go.dev/blog/error-handling-and-go)
-- [ ] Reflect Three Point[blog](https://go.dev/blog/laws-of-reflection)
+- [x] Go Doc 命令梳理
+- [x] Go Fix 命令梳理
+- [x] pprof 命令的使用
+- [x] pprof 的源码解析
+- [x] 何为FirstClass?
+- [x] Simplify error handling: [blog](https://go.dev/blog/error-handling-and-go)
+- [x] Reflect Three Point[blog](https://go.dev/blog/laws-of-reflection)
 - [ ] Select Case 的详细使用[blog](https://go.dev/blog/concurrency-timeouts)
 - [ ] GNC Debugger 的详细使用[blog](https://go.dev/blog/debug-status)
 - [ ] Go 中String, Byte, Rune, utf-8, unicode等梳理
@@ -21,5 +21,5 @@
 - [ ] Go Generate 的使用场景: [blog1](https://go.dev/blog/generate)
 - [ ] HTTP Tracing 的了解: [blog1](https://go.dev/blog/http-tracing)
 - [ ] HTTP Server Push 的梳理: [blog1](https://go.dev/blog/h2push)
-- [ ] Protocol Buffer 的梳理: [blog2](https://go.dev/blog/protobuf-apiv2)
+- [x] Protocol Buffer 的梳理: [blog2](https://go.dev/blog/protobuf-apiv2)
 - [ ] Module compatible 的了解: [blog1](https://go.dev/blog/module-compatibility)
