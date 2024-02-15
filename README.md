@@ -9,7 +9,7 @@
 - [x] 何为FirstClass?
 - [x] Simplify error handling: [blog](https://go.dev/blog/error-handling-and-go)
 - [x] Reflect Three Point[blog](https://go.dev/blog/laws-of-reflection)
-- [ ] Select Case 的详细使用[blog](https://go.dev/blog/concurrency-timeouts)
+- [x] Select Case 的详细使用[blog](https://go.dev/blog/concurrency-timeouts)
 - [ ] GNC Debugger 的详细使用[blog](https://go.dev/blog/debug-status)
 - [ ] Go 中String, Byte, Rune, utf-8, unicode等梳理
 - [ ] 文本正常化中的NFC, NFD, NFKC, NFKD的概念[blog](https://go.dev/blog/normalization)
