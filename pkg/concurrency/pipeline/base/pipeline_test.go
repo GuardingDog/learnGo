@@ -6,15 +6,12 @@ import (
 )
 
 func TestPipeline(t *testing.T) {
-	c := Gen(1, 2, 3, 4, 5, 6, 7, 8, 9)
-	out := Sq(c)
-	for n := range out {
-		fmt.Println(n)
-	}
-}
-
-func TestPipeline2(t *testing.T) {
-	for n := range Sq(Sq(Sq(Gen(2, 3)))) {
-		fmt.Println(n)
+	ch1 := Gen(1, 2, 3)
+	// fan-out: Distribute the work across two goroutines
+	out1 := Sq(ch1)
+	out2 := Sq(ch1)
+	// fan-in: Consume fan-in result
+	for o := range merge(out1, out2) {
+		fmt.Printf("Got result: %v \n", o)
 	}
 }

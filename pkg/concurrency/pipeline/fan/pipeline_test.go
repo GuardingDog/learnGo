@@ -8,12 +8,12 @@ import (
 )
 
 func TestPipeline3(t *testing.T) {
-	in := base.Gen(2, 3)
+	in := base.Gen(1, 2, 3)
 
 	c1 := base.Sq(in)
 	c2 := base.Sq(in)
 
 	for n := range merge(c1, c2) {
-		fmt.Println(n)
+		fmt.Printf("Got result: %v \n", n)
 	}
 }

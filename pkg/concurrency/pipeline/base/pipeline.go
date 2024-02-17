@@ -1,12 +1,10 @@
 package base
 
 import (
-	"fmt"
+	"sync"
 )
 
 func Gen(nums ...int) <-chan int {
-	fmt.Println("Start gen func ...")
-	defer fmt.Println("End gen func ...")
 	out := make(chan int)
 	go func() {
 		for _, n := range nums {
@@ -18,13 +16,34 @@ func Gen(nums ...int) <-chan int {
 }
 
 func Sq(in <-chan int) <-chan int {
-	fmt.Println("Start sq func ...")
-	defer fmt.Println("End sq func ...")
 	out := make(chan int)
 	go func() {
 		for n := range in {
 			out <- n * n
 		}
+		close(out)
+	}()
+	return out
+}
+
+func merge(cs ...<-chan int) <-chan int {
+	var wg sync.WaitGroup
+	out := make(chan int)
+
+	output := func(c <-chan int) {
+		for n := range c {
+			out <- n
+		}
+		wg.Done()
+	}
+
+	wg.Add(len(cs))
+	for _, c := range cs {
+		go output(c)
+	}
+
+	go func() {
+		wg.Wait()
 		close(out)
 	}()
 	return out

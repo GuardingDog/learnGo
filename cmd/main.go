@@ -1,34 +1,37 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"time"
 )
 
 func main() {
-	ch1 := make(chan int)
-	ch2 := make(chan string)
-	go sender1(ch1)
-	go sender2(ch2)
-	select {
-	case value := <-ch1:
-		fmt.Printf("Got from channel one: %v \n", value)
-	case value := <-ch2:
-		fmt.Printf("Got from channel two: %v \n", value)
-	case <-time.After(1 * time.Second):
-		fmt.Printf("Time out \n")
-	}
+	parentCtx := context.Background()
 
-	time.Sleep(1 * time.Second)
-}
+	// Using WithTimeout
+	timeoutCtx, cancel := context.WithTimeout(parentCtx, 2*time.Second)
+	defer cancel()
 
-func sender1(ch chan int) {
-	time.Sleep(2 * time.Second)
-	ch <- 1
-}
+	// Using WithDeadline
+	deadlineCtx, cancel := context.WithDeadline(parentCtx, time.Now().Add(2*time.Second))
+	defer cancel()
 
-func sender2(ch chan string) {
-	time.Sleep(2 * time.Second)
+	// Simulating long-running operations
+	go func() {
+		select {
+		case <-timeoutCtx.Done():
+			fmt.Println("Timeout Context canceled")
+		}
+	}()
 
-	ch <- "Qingzhi"
+	go func() {
+		select {
+		case <-deadlineCtx.Done():
+			fmt.Println("Deadline Context canceled")
+		}
+	}()
+
+	// Waiting for a while to observe the difference
+	time.Sleep(3 * time.Second)
 }
