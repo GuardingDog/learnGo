@@ -1,0 +1,31 @@
+package arrays
+
+func Sum(numbers []int) int {
+	sum := 0
+
+	for _, number := range numbers {
+		sum += number
+	}
+
+	return sum
+}
+
+func SumAll(numbersToSum ...[]int) []int {
+	sums := make([]int, len(numbersToSum))
+
+	for i, numbers := range numbersToSum {
+		sums[i] = Sum(numbers)
+	}
+	return sums
+}
+
+func SumAllTails(numbersToSum ...[]int) []int {
+	sums := make([]int, len(numbersToSum))
+
+	for i, numbers := range numbersToSum {
+		tail := numbers[1:]
+		sums[i] = Sum(tail)
+	}
+	return sums
+
+}
