@@ -1,0 +1,11 @@
+{
+    "go.useLanguageServer": true,
+    "go.alternateTools": {
+        "go": "/usr/local/go/bin/go",
+        "gopls": "/root/go/bin/gopls"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "gopls": {
+        "experimentalWorkspaceModule": true
+    }
+}
